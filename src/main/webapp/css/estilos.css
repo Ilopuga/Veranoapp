@@ -1,0 +1,391 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  color: #023048;
+  font-family: "Rowdies", sans-serif;
+}
+.grid-header {
+  display: grid;
+  height: 100%;
+  padding: 10px;
+  grid-template-columns: 20% 80%;
+  grid-gap: 10px; /* Espacio entre las columnas */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[class^="heading-"] {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 3em;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #45b3b6;
+  text-align: center;
+}
+
+p {
+  font-weight: 300;
+  font-style: normal;
+  padding-bottom: 10px;
+}
+@media screen and (max-width: 700px) {
+  p {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 700px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  [class^="heading-"] {
+    font-size: 1.3em;
+    width: 80%;
+    margin: 0 auto; /* Centra el bloque horizontalmente */
+    text-align: center; /* Centra el texto dentro del bloque */
+  }
+}
+/* Por defecto muestra el de escritorio y oculta mv*/
+.logo-escritorio {
+  display: block;
+  width: 100px;
+}
+.logo-movil {
+  display: none;
+}
+/* Menos de 700 haría...*/
+@media screen and (max-width: 700px) {
+  .logo-escritorio {
+    display: none;
+  }
+  .logo-movil {
+    display: block;
+    /*alinear al centro*/
+    margin: 0 auto;
+  }
+}
+/*Navbar*/
+
+nav {
+  /*flex para dentro de nav*/
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 100px; /* alto para que alinee con el logo */
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  display: inline-block;
+  font-weight: 300;
+  font-style: normal;
+  margin-right: 5px;
+  font-size: 2.5em;
+  margin-right: 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+nav img {
+  width: 40px;
+  height: 50px;
+}
+
+.nav-item.active a {
+  text-decoration: underline;
+}
+.nav-item {
+  transition: color 0.3s, background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.nav-item:hover,
+.nav-item.focus,
+nav-item.opened {
+  transform: scale(1.1);
+  color: #45b3b6;
+}
+
+#img-login:hover img {
+  content: url("../img/login_hover.png");
+}
+
+/*responsive del header*/
+/* Ajustar el tamaño de la fuente para dispositivos más pequeños */
+@media only screen and (max-width: 700px) {
+  .nav {
+    height: 20px; /* alto para que alinee con el logo */
+  }
+  .nav-item {
+    font-size: 1.3em; /* Reduce el tamaño de la fuente */
+  }
+
+  .grid-header {
+    display: grid;
+    grid-template-columns: 1fr; /* Cambia las columnas a una sola fila */
+  }
+
+  .nav {
+    justify-content: center;
+    flex-direction: column; /* Cambia la dirección a columna */
+  }
+  .nav ul li {
+    margin-right: 5px;
+  }
+
+  .nav-item:not(:last-child) {
+    margin-bottom: 10px; /* Añade margen entre los elementos de la lista */
+  }
+  .nav img {
+    width: 25px;
+    height: 30px;
+  }
+}
+/*Carrusel*/
+.carrusel {
+  position: relative;
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+  height: 250px; /* Altura fija del carrusel */
+  overflow: hidden; /* Oculta cualquier contenido que se extienda más allá de las bordes del carrusel */
+  margin-top: 20px; /* Espacio opcional por encima del carrusel */
+  margin-bottom: 20px; /* Espacio opcional por debajo del carrusel */
+}
+.carrusel ul {
+  width: 100%; /* Asegura que el ul tenga el ancho completo del carrusel */
+  list-style: none; /* Elimina los estilos de lista */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margen predeterminado */
+}
+
+.carrusel li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cada li se extiende a lo ancho del carrusel */
+  transition: opacity 1s ease-in-out; /* Suaviza la transición de opacidad */
+  opacity: 0; /* Inicialmente invisible excepto el primero */
+}
+
+.carrusel li:first-child {
+  opacity: 1; /* Muestra el primer li */
+}
+
+.carrusel img {
+  width: 100%; /* Hace que las imágenes llenen completamente sus contenedores li */
+  height: auto; /* Mantiene la proporción de las imágenes */
+  display: block; /* Elimina cualquier espacio extra bajo la imagen */
+}
+@media only screen and (max-width: 700px) {
+  .carrusel {
+    height: 80px;
+  }
+}
+/*Inicio */
+.texto-inicio {
+  width: 80%; /* Ancho del div */
+  margin: 0 auto; /* Margen superior e inferior en 0 y margen izquierdo y derecho automático para centrar */
+  padding: 10px; /* Espacio interno para no tener el texto pegado a los bordes */
+}
+.texto-inicio p {
+  margin: 15px;
+}
+
+/*Actividades*/
+.grid-actividades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 10px;
+  width: 60%;
+  margin: 10px auto;
+}
+
+.actividades-item {
+  color: #45b3b6;
+  padding: 10px; /* Aumenté el padding para más espacio interno */
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave de sombra y transformación */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave por defecto */
+}
+
+.actividades-item:hover {
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+  box-shadow: 0 5px 15px #023048;
+}
+
+.actividades-item img {
+  width: 90%;
+  height: auto; /* Mantiene la proporción original de la imagen */
+  margin-bottom: 5px; /* Espacio entre la imagen y el texto */
+}
+
+@media screen and (max-width: 700px) {
+  .grid-actividades {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    padding: 10px;
+  }
+}
+/* Footer */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #45b3b6;
+  text-align: center;
+}
+
+.footer-columna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer img {
+  width: 100px;
+}
+
+.footer a {
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+#rrss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#rrss a {
+  display: flex;
+  align-items: center; /* Alinea verticalmente la imagen con el texto */
+  text-decoration: none; /* Opcional: Elimina el subrayado del enlace */
+  margin-bottom: 10px; /* Espacio entre enlaces */
+}
+
+#rrss img {
+  width: 30px;
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+@media (max-width: 700px) {
+  .footer {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+/*Formulario*/
+.form-add {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 60%;
+  margin: 30px auto;
+  padding: 20px;
+  border: #45b3b6 3px solid;
+  border-radius: 8px;
+}
+
+.form-add li {
+  list-style: none;
+  margin-bottom: 15px; /* Espacio entre los campos */
+}
+
+.form-add label {
+  display: block; /* La etiqueta ocupe todo el ancho */
+  margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+}
+
+.form-add input[type="text"],
+.form-add input[type="email"],
+.form-add input[type="number"],
+.form-add input[type="date"],
+.form-add select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #45b3b6; /* Borde sutil */
+  border-radius: 4px; /* Bordes redondeados para los inputs */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho final */
+}
+
+.form-add input[type="submit"] {
+  background-color: #45b3b6;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .form-add {
+    width: 90%; /* Más ancho en dispositivos pequeños para aprovechar el espacio */
+  }
+}
+
+.contenido-actividad {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1 fracción para la imagen, 2 fracciones para el texto */
+  gap: 20px; /* Espacio entre las columnas */
+  margin: 20px auto; /* Centra el contenedor en la página */
+  padding: 20px;
+}
+
+.actividad-imagen {
+  width: 80%; /* Ajusta la imagen al espacio de su columna */
+  margin: auto;
+}
+
+.actividad-texto {
+  padding: 0 20px; /* Añade padding para separar el texto de los bordes del grid */
+}
+
+@media (max-width: 700px) {
+  .contenido-actividad {
+    grid-template-columns: 1fr;
+  }
+
+  .actividad-imagen {
+    max-width: 90%;
+  }
+
+  .actividad-texto {
+    padding: 10px; /* Ajusta el padding para pantallas más pequeñas */
+  }
+}
+
+.caja-login form {
+  width: 100%; /* Establece el ancho del formulario al 100% de su contenedor */
+}
+
+.caja-login input[type="text"],
+.caja-login input[type="password"],
+.caja-login input[type="submit"] {
+  width: calc(
+    100% - 20px
+  ); /* Resta el padding para que el input no sobrepase el ancho del formulario */
+  padding: 10px; /* Espacio interior para los inputs */
+  margin-bottom: 15px; /* Espacio entre los inputs */
+  border: 1px solid #ccc; /* Borde de los inputs */
+  border-radius: 4px; /* Esquinas redondeadas para los inputs */
+}
+.caja-login input[type="submit"] {
+  background-color: #45b3b6; /* Color de fondo para el botón */
+  color: white; /* Color de texto para el botón */
+  border: none; /* Remueve el borde del botón */
+  cursor: pointer; /* Cambia el cursor a pointer para indicar que es clickeable */
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilos_gestion.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="../img/favico.ico" />
+    <title>Gestión de Campaña de Verano</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <aside class="sidebar">
+        <nav>
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#submenu1"
+                ><img src="img/user.png" alt="User" />Usuarios</a
+              >
+              <ul id="submenu1" class="submenu">
+                <li><a href="add_admin.html">Añadir</a></li>
+                <li><a href="list_admin.html">Gestión</a></li>
+                <li>Buscar</li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#submenu2"
+                ><img
+                  src="img/actividades.png"
+                  alt="Actividades"
+                />Actividades</a
+              >
+              <ul id="submenu2" class="submenu">
+                <li><a href="add_actividad.html">Añadir</a></li>
+                <li><a href="list_actividad.html">Gestión</a></li>
+                <li>Buscar</li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#submenu3"
+                ><img
+                  src="img/solicitudes.png"
+                  alt="Solicitudes"
+                />Solicitudes</a
+              >
+              <ul id="submenu3" class="submenu">
+                <li>Añadir</li>
+                <li>Listar</li>
+                <li>Buscar</li>
+                <li>Modificar</li>
+                <li>Eliminar</li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#submenu4"
+                ><img src="img/proceso.png" alt="User" />Proceso</a
+              >
+              <ul id="submenu4" class="submenu">
+                <li>Asignar número</li>
+                <li>Realizar sorteo</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    <!--========== CONTENIDO ==========-->
+    <main>
+      <section>
+        <h1>Añadir actividad</h1>
+        <div class="form-add">
+            <form
+              name="AltaActividad"
+              action="../GestionActividad"
+              method="post"
+              enctype="multipart/form-data" id="AltaActividad">
+              <ul><input type="hidden" id="cod_actividad" name="cod_actividad">
+                <li>
+                  <label for="nombreA">Nombre:</label>
+                  <input type="text" name="nombreA" id="nombreA" placeholder="Nombre de la actividad" required/>
+                </li>
+                <li>
+                  <label for="lugar">Lugar:</label>
+                  <input type="text" name="lugar" id="lugar" placeholder="Lugar donde se llevará a cabo" required/>
+                </li>
+                <li>
+                  <label for="tema">Tema</label>
+                    <select id="tema" name="tema" required>
+                     <option value="Acuático">Acuático</option>
+                      <option value="Aventura">Aventura</option>
+                      <option value="Cooperación">Cooperación</option>
+                      <option value="Deporte">Deporte</option>
+                      <option value="Internacional">Internacional</option>
+                      <option value="Ocio">Ocio</option>
+                    </select>
+                </li>
+                <li>
+                  <label for="descripcion">Descripción:</label>
+                  <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Ingrese una descripción..."></textarea>
+                </li>
+                <li>
+                  <label for="imagen">Imagen actual:</label>
+                  <img id="imagenBdd" src="" alt="">
+                  <input type="file" id="imagen" name="imagen"/>
+                </li>
+                <li>
+                  <label for="f_inicio">Fecha de inicio:</label>
+                  <input type="text" name="f_inicio" id="f_inicio" placeholder="DD-MM-AAAA" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" required/>
+                </li>
+                <li>
+                  <label for="f_fin">Fecha de fin:</label>
+                  <input type="text" name="f_fin" id="f_fin" placeholder="DD-MM-AAAA" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" required/>
+                </li>
+                <li>
+                  <label for="e_min">Edad mínima:</label>
+                  <input type="number" name="e_min" id="e_min" placeholder="Edad mínima permitida" required/>
+                </li>
+                <li>
+                  <label for="e_max">Edad máxima:</label>
+                  <input type="number" name="e_max" id="e_max" placeholder="Edad máxima permitida" required/>
+                </li>
+                <li>
+                <label for="plazas">Plazas:</label>
+                <input type="number" name="plazas" id="plazas" placeholder="Número de plazas" required/>
+                </li>
+                <li><input type="submit" id="enviarBoton" value="ENVIAR" /></li>
+              </ul>
+            </form>
+        </div>
+      </section>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+</html>
+

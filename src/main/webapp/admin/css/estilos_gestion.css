@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rowdies', sans-serif;
+  color: #023048;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #45B3B6;
+  padding: 20px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.menu-item img {
+  width: 25px;
+  vertical-align:bottom;
+  margin: 5px;
+}
+.menu-item a {
+  text-decoration: none;
+}   
+
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  font-size: 0.8em;
+  display: none; /* Oculta por defecto */
+}
+
+.submenu li {
+  padding: 5px 0;
+
+}
+.submenu:target {
+  display: block; /* Muestra cuando es el target */
+}
+.content {
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr; /* Coloca el sidebar encima del contenido */
+  }
+
+  .menu-item {
+      display: block;
+  }
+}
+section h1{
+  margin: 10px;
+  padding: 20px;
+  background-color: #45B3B6;
+  border-radius: 10px;
+}
+.form-add li{
+  list-style: none;
+  /* separar del margen izquierdo y arriba*/
+  margin: 10px;
+}
+.form-add input[type="submit"]{
+  background-color: #45B3B6;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.texto{
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #45B3B6;
+  background-color: #fff;
+  border-radius: 10px;
+}
+#error{
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+/* Tablas */
+table {
+  border-collapse: collapse; /* Elimina los espacios entre las celdas */
+}
+
+/* Estilos para las celdas de la tabla */
+table th,
+table td {
+  border: 1px solid #45b3b6; /* Borde sutil para cada celda */
+  padding: 5px; /* Espaciado interno para texto */
+  text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* Estilos para los encabezados de la tabla */
+table th {
+  background-color: #45b3b6; /* Fondo del mismo color que el botón del formulario */
+  font-size: 1.1em; /* Un poco más grande para destacar */
+  text-align: center;
+}
+
+/* Estilo para las filas de la tabla al pasar el ratón */
+table tr:hover {
+  background-color: #f0f0f0; /* Un ligero cambio de color al pasar el ratón */
+}
+/*que al mostrar la imagen se previsualice en la tabla con un tamaño de 100px*/
+table img{
+  width: 100px;
+}
+#imagenBdd{
+  width: 100px;
+}

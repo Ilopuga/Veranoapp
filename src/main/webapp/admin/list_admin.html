@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilos_gestion.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="../img/favico.ico" />
+    <title>Gestión de Campaña de Verano</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <aside class="sidebar">
+        <nav>
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#submenu1"
+                ><img src="img/user.png" alt="User" />Usuarios</a
+              >
+              <ul id="submenu1" class="submenu">
+                <li><a href="add_admin.html">Añadir</a></li>
+                <li><a href="list_admin.html">Listar</a></li>
+                <li>Buscar</li>
+                <li>Modificar</li>
+                <li>Eliminar</li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#submenu2"
+                ><img
+                  src="img/actividades.png"
+                  alt="Actividades"
+                />Actividades</a
+              >
+              <ul id="submenu2" class="submenu">
+                <li><a href="add_actividad.html">Añadir</a></li>
+                <li><a href="list_actividad.html">Gestión</a></li>
+                <li>Buscar</li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#submenu3"
+                ><img
+                  src="img/solicitudes.png"
+                  alt="Solicitudes"
+                />Solicitudes</a
+              >
+              <ul id="submenu3" class="submenu">
+                <li>Añadir</li>
+                <li>Listar</li>
+                <li>Buscar</li>
+                <li>Modificar</li>
+                <li>Eliminar</li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#submenu4"
+                ><img src="img/proceso.png" alt="User" />Proceso</a
+              >
+              <ul id="submenu4" class="submenu">
+                <li>Asignar número</li>
+                <li>Realizar sorteo</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    <!--========== CONTENIDO ==========-->
+    <main>
+      <section>
+        <h1>Listado de Administradores</h1>
+        <div id="resultados"></div>
+      </section>
+    </main>
+    <script src="js/admin.js"></script>
+  </body>
+</html>
